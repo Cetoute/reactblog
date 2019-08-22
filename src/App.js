@@ -9,13 +9,23 @@ class App extends Component {
 				id: 0,
 				title: 'Avengers: Infinity War',
 				overview:
-					'As the Avengers and their allies have continued to protect the world from threat too large for any one hero to handle,a new danger has emerged frm the cosmic shadows: Thanos.',
+					'As the Avengers and their allies have continued to protect the world from threat too large for any one hero to handle,a new danger has emerged frm the cosmic shadows: Thanos.'
+			},
+			{
 				id: 0,
-				title: 'Infinity War',
+				title: 'The Avengers',
 				overview:
-					' and their allies have continued to protect the world from threat too large for any one hero to handle,a new danger has '
+					' and their allies have continued to protect the world from threat too large for any one hero to handle,a new danger has'
 			}
 		];
+
+		let moviesRows = [];
+		movies.forEach((movie) => {
+			console.log(movie.title);
+			moviesRows.push(<p key={movie.id}>movie title: {movie.title}</p>);
+		});
+
+		this.state = { rows: moviesRows };
 	}
 
 	render() {
@@ -27,14 +37,9 @@ class App extends Component {
 							<td>
 								<img width="50" src="moviedb1.png" alt="app-icon" />
 							</td>
-							<td>
-								<h1>MoviesDB Search</h1>{' '}
-							</td>
 						</tr>
 					</tbody>
 				</table>
-				<input className="input" placeholder="Enter search here" />
-				{this.state.rows}
 			</div>
 		);
 	}
